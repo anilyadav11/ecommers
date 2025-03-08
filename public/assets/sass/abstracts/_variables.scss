@@ -1,0 +1,85 @@
+
+//===================== Theme variable ===================== //
+
+:root {
+    --brand-color: #145961;
+    --secondary-color:#74B74E;
+    --body-color:#FFFFFF;
+    --bg-color:#F2F7F5;
+    --bg-color-2:#F2FFEB;
+    --bg-color-3:#D2F7CF;
+    --bg-color-4:#E1EBE7;
+    --bg-dark-color:#073439;
+    --title-color:#161915;
+    --title-color-dark:#FFFFFF;
+    --text-color: #6F7E6E;
+    --text-color-dark:#EDF0ED;
+    --text-color-dark2:#A9B3A8;
+    --border-color: #C6E2B6;
+    --border-color-thin: #EBF8E4;
+    --border-color-1: #C6CDC6;
+    --border-color-2: #EDF0ED;
+    --white-color:#FFFFFF;
+    --black-color: #000000;
+    --yellow-color: #F2C94C;
+    --yellow-color-2: #FFDA84;
+    --gray-color: #6F7E6E;
+    --pink-color: #FFD3CC;
+    --danger-color: #CE3939;
+}
+
+
+//*-----------------------------------
+//*** Custom variables for theme end
+//*-----------------------------------
+
+//===================== Variables start===================== //
+// theme colors
+$brand-color: var(--brand-color);
+$secondary-color: var(--secondary-color);
+$body-color: var(--body-color);
+$title-color: var(--title-color);
+$title-color-dark: var(--title-color-dark);
+$text-color: var(--text-color);
+$text-color-dark: var(--text-color-dark);
+$text-color-dark2: var(--text-color-dark2);
+$white-color: var(--white-color);
+$black-color: var(--black-color);
+$border-color: var(--border-color);
+$border-color-thin: var(--border-color-thin);
+$border-color-1: var(--border-color-1);
+$border-color-2: var(--border-color-2);
+$bg-color: var(--bg-color);
+$bg-color-2: var(--bg-color-2);
+$bg-color-3: var(--bg-color-3);
+$bg-color-4: var(--bg-color-4);
+$bg-dark-color: var(--bg-dark-color);
+$yellow-color: var(--yellow-color);
+$yellow-color-2: var(--yellow-color-2);
+$gray-color: var(--gray-color);
+$pink-color: var(--pink-color);
+$danger-color: var(--danger-color);
+
+
+
+//=====================>>>\ Variables end ===================== //
+
+//Template Font family
+
+$title-font:"Manrope", sans-serif;
+
+$text-font:"Work Sans", sans-serif;
+
+//Template font sizes
+$fs-base: 16px !default;
+$fs-small:14px;
+$fs-big:18px;
+$fs-h1: 48px;
+$fs-h2: 32px;
+$fs-h3: 24px;
+$fs-h4: 20px;
+$fs-h5: 18px;
+$fs-h6: 16px;
+
+//Template transition
+$transition:all .3s ease-out;

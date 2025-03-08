@@ -1,0 +1,47 @@
+.social {
+  @extend %d-flex;
+  @extend %align-i-center;
+  @extend %list-none;
+  @extend %ps-0;
+  @extend %mb-0;
+  gap: 10px;
+
+  @include breakpoint(md) {
+    gap: 15px;
+  }
+
+
+
+  &__link {
+    @extend %d-grid,
+    %place-i-center,
+    %text-center;
+    height: 40px;
+    width: 40px;
+    border-radius: 8px;
+    background: $brand-color;
+    transition: $transition;
+    @include add-prefix(transition, background-color .2s linear);
+    @include font-size(18px);
+
+    svg,
+    i {
+      color: $white-color !important;
+      transition: $transition;
+    }
+
+    &:hover {
+      background-color: $secondary-color;
+
+    }
+
+    &--style2 {
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    &--style3 {
+      background-color: rgba(196, 243, 182, 0.5);
+    }
+  }
+
+}
