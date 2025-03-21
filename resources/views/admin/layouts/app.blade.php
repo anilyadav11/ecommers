@@ -1,4 +1,7 @@
 @include('admin.layouts.header')
+@php
+$settings=\App\Models\setting::first();
+@endphp
 
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
     <!--begin::App Wrapper-->
@@ -154,7 +157,9 @@
                                 src="{{asset('admin/assets/img/user2-160x160.jpg')}}"
                                 class="user-image rounded-circle shadow"
                                 alt="User Image" />
-                            <span class="d-none d-md-inline">Alexander Pierce</span>
+                            <span class="d-none d-md-inline">aa
+
+                            </span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
                             <!--begin::User Image-->
@@ -200,15 +205,15 @@
             <!--begin::Sidebar Brand-->
             <div class="sidebar-brand">
                 <!--begin::Brand Link-->
-                <a href="./index.html" class="brand-link">
+                <a href="{{route('admin.dashboard')}}" class="brand-link">
                     <!--begin::Brand Image-->
                     <img
-                        src="{{asset('admin/assets/img/AdminLTELogo.png')}}"
+                        src="{{asset('uploads/setting/'.$settings->logo)}}"
                         alt="AdminLTE Logo"
-                        class="brand-image opacity-75 shadow" />
+                        class="brand-image opacity-75 shadow" style="max-height: 80px" />
                     <!--end::Brand Image-->
                     <!--begin::Brand Text-->
-                    <span class="brand-text fw-light">AdminLTE 4</span>
+                    <span class="brand-text fw-light"></span>
                     <!--end::Brand Text-->
                 </a>
                 <!--end::Brand Link-->
@@ -232,7 +237,7 @@
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-end">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Home</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
                             </ol>
                         </div>
@@ -247,7 +252,7 @@
                 <!--begin::Container-->
                 <div class="container-fluid">
                     <!--begin::Row-->
-                   
+
                     <!--end::Row-->
                     <!--begin::Row-->
                     <main>@yield('content')</main>

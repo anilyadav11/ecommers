@@ -27,6 +27,7 @@ class User extends Authenticatable
         'state',
         'country',
         'postal_code',
+        'status',
     ];
 
     /**
@@ -48,4 +49,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    public static function countUsers()
+    {
+        return self::count();
+    }
 }

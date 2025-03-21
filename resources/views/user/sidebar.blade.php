@@ -12,7 +12,10 @@
                             src="{{asset('uploads/setting/'.$settings->logo)}}" class="img-fluid" width="200px" alt="logo"></a>
                     <div class="bottom-border pb-3">
                         <img src="./img/profile.jpg" alt="" width="60" class="rounded-circle">
-                        <a href="#" class="text-light">Mostakimul</a>
+                        <a href="#" class="text-light"> @auth
+                            <p>Welcome, {{ auth()->user()->name }}!</p>
+                            @endauth
+                        </a>
                     </div>
                     <ul class="navbar-nav flex-column mt-5">
                         <li class="nav-item">
@@ -41,7 +44,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link text-light p-3 mb-2 sidebar-link">
+                            <a href="{{route('user.profile',['id'=>Auth::user()->id ?? 0])}}" class="nav-link text-light p-3 mb-2 sidebar-link">
                                 <i class="fa fa-cogs text-light fa-lg mr-3"></i>Settings
                             </a>
                         </li>

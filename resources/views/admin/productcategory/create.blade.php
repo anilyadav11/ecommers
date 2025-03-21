@@ -2,8 +2,11 @@
 @section('content')
 <div class="col-md-12">
     <div class="card card-primery card-outline mb-4">
-        <div class="card-header">
+        <div class="card-header" style="background-color: #0a6ebd">
             <div class="card-title"> Product Caregory</div>
+            <div class="card-tools">
+                <a class="btn btn-secondry" style="background-color:rgb(230, 28, 129)" href="{{route('admin.dashboard')}}"> Back</a>
+            </div>
         </div>
         <div class="container-fluid">
             @if(session('success'))

@@ -4,10 +4,10 @@
     <!--begin::Quick Example-->
     <div class="card card-primary card-outline mb-4">
         <!--begin::Header-->
-        <div class="card-header">
-            <div class="card-title">New Product Create</div>
+        <div class="card-header" style="background-color: #0a6ebd">
+            <div class="card-title">Website Settings</div>
             <div class="card-tools">
-                <a class="btn btn-secondry"> Back</a>
+                <a class="btn btn-secondry" style="background-color:rgb(230, 28, 129)" href="{{route('admin.dashboard')}}"> Back</a>
             </div>
         </div>
         <!--end::Header-->
@@ -120,8 +120,10 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-3">
+                        <label for="Twitter" class="form-label">Logo</label>
                         <div class="input-group mb-3">
+
                             <img src="{{asset('uploads/setting/'.$setting->logo)}}" alt="" width="80" height="80px">
                             <input type="file" class="form-control @error('logo') is-invalid @enderror" name="logo" />
                             <label class="input-group-text" for="inputGroupFile02">Upload</label>
@@ -130,7 +132,8 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
+                        <label for="Twitter" class="form-label">Footer Logo</label>
                         <div class="input-group mb-3">
                             <img src="{{asset('uploads/setting/'.$setting->footerlogo)}}" alt="" width="80" height="80px">
                             <input type="file" class="form-control @error('footerlogo') is-invalid @enderror" name="footerlogo" />
@@ -140,12 +143,24 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
+                        <label for="Twitter" class="form-label">Favicon</label>
                         <div class="input-group mb-3">
                             <img src="{{asset('uploads/setting/'.$setting->favicon)}}" alt="" width="80" height="80px">
                             <input type="file" class="form-control @error('favicon') is-invalid @enderror" name="favicon" />
                             <label class="input-group-text" for="inputGroupFile02">Upload</label>
                             @error('favicon')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="Twitter" class="form-label">Banner</label>
+                        <div class="input-group mb-3">
+                            <img src="{{asset('uploads/setting/'.$setting->banner)}}" alt="" width="80" height="80px">
+                            <input type="file" class="form-control @error('favicon') is-invalid @enderror" name="banner" />
+                            <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                            @error('banner')
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>

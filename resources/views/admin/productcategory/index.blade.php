@@ -2,11 +2,20 @@
 @section('content')
 <div class="col-md-12">
     <div class="card mb-4">
-        <div class="card-header">
-            <h3 class="card-title">Category</h3>
+        <div class="card-header" style="background-color: #0a6ebd">
+            <h3 class="card-title">Product Category</h3>
             <div class="card-tools">
-                <a class="btn btn-secondry"> Back</a>
+                <a class="btn btn-secondry" style="background-color:rgb(230, 28, 129)" href="{{route('admin.dashboard')}}"> Back</a>
             </div>
+        </div>
+        <div class="container-fluid">
+            @if(session('success'))
+            <div class="alert alert-success">
+
+                {{session('success')}}
+
+            </div>
+            @endif
         </div>
         <!-- /.card-header -->
         <div class="card-body p-0">

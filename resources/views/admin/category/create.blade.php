@@ -1,46 +1,55 @@
 @extends('admin.layouts.app')
 @section('content')
+
 <div class="col-md-12">
-    <div class="card card-primery card-outline md-4">
-        <div class="card-header">
-            <div class="card-title"> Ctegory</div>
+    <!--begin::Quick Example-->
+    <div class="card card-primary card-outline mb-4">
+        <!--begin::Header-->
+        <div class="card-header" style="background-color: #0a6ebd">
+            <div class="card-title">New Category Create</div>
+            <div class="card-tools">
+                <a class="btn btn-secondry" style="background-color:rgb(230, 28, 129)" href="{{route('admin.dashboard')}}"> Back</a>
+            </div>
         </div>
-        <div class="container">
+        <!--end::Header-->
+        <!--begin::Form-->
+        <div class="container-fluid">
             @if(session('success'))
             <div class="alert alert-success">
                 {{session('success')}}
+
             </div>
             @endif
         </div>
-
+        <form method="post" action="{{route('admin.category.store')}}">
+            @csrf
+            <div class="card-body">
+                <div class="mb-3">
+                    <label for="name"> Nmae</label>
+                    <input type="text" name="name" class="form-control" value="{{old('name')}}">
+                    <div class="text-danger">
+                        @error('name')
+                        {{$message}}
+                        @enderror
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="slug">Slug</label>
+                    <input type="text" class="form-control" name="slug" value="{{old('slug')}}">
+                    <div class="text-danger">
+                        @error('slug')
+                        {{$message}}
+                        @enderror
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+        <!--end::Form-->
     </div>
-    <form method="post" action="{{route('admin.category.store')}}">
-        @csrf
-        <div class="card-body">
-            <div class="mb-3">
-                <label for="name"> Nmae</label>
-                <input type="text" name="name" class="form-control" value="{{old('name')}}">
-                <div class="text-danger">
-                    @error('name')
-                    {{$message}}
-                    @enderror
-                </div>
-            </div>
-            <div class="mb-3">
-                <label for="slug">Slug</label>
-                <input type="text" class="form-control" name="slug" value="{{old('slug')}}">
-                <div class="text-danger">
-                    @error('slug')
-                    {{$message}}
-                    @enderror
-                </div>
-            </div>
-        </div>
-        <div class="card-footer">
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-    </form>
-</div>
+
 </div>
 @endsection
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

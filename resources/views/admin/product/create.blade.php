@@ -4,10 +4,10 @@
     <!--begin::Quick Example-->
     <div class="card card-primary card-outline mb-4">
         <!--begin::Header-->
-        <div class="card-header">
+        <div class="card-header" style="background-color: #0a6ebd">
             <div class="card-title">New Product Create</div>
             <div class="card-tools">
-                <a class="btn btn-secondry"> Back</a>
+                <a class="btn btn-secondry" style="background-color:rgb(230, 28, 129)" href="{{route('admin.dashboard')}}"> Back</a>
             </div>
         </div>
         <!--end::Header-->

@@ -54,6 +54,15 @@ Route::get('shop', function () {
 
 
 // Admin Routes
+
+
+
+
+Route::put('/admin/user/status/{id}', [UserAuthController::class, 'updateStatus'])->name('admin.user.status.update');
+Route::put('/product/status/{id}', [ProductController::class, 'updateStatus'])->name('product.status.update');
+
+
+
 Route::get('/admin/register', [AdminAuthController::class, 'showRegisterForm'])->name('admin.register');
 Route::post('/admin/register', [AdminAuthController::class, 'register']);
 Route::get('/admin/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
@@ -97,6 +106,7 @@ Route::middleware('auth:web')->group(function () {
 
 
     Route::get('/invoice/download/{id}', [InvoiceController::class, 'downloadInvoice'])->name('invoice.download');
+    Route::get('/user/profile/{id}', [UserAuthController::class, 'showProfile'])->name('user.profile');
 });
 
 

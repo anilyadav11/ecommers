@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Setting;
+use App\Models\setting;
 
 class SettingController extends Controller
 {
@@ -74,6 +74,12 @@ class SettingController extends Controller
             $footerlogo_name = time() . '.' . $footerlogo->getClientOriginalExtension(); // Fixed typo
             $footerlogo->move(public_path('uploads/setting'), $footerlogo_name);
             $setting->footerlogo = $footerlogo_name;
+        }
+        if ($request->hasFile('banner')) {
+            $banner = $request->file('banner');
+            $banner_name = time() . '.' . $banner->getClientOriginalExtension(); // Fixed typo
+            $banner->move(public_path('uploads/setting'), $banner_name);
+            $setting->banner = $banner_name;
         }
 
         $setting->title = $request->title;

@@ -6,7 +6,7 @@
         <!--begin::Small Box Widget 1-->
         <div class="small-box text-bg-primary">
             <div class="inner">
-                <h3>{{$newOrder}}</h3>
+                <h3>{{ \App\Models\order::newcount() }}</h3>
                 <p>New Orders</p>
             </div>
             <svg
@@ -31,8 +31,9 @@
         <!--begin::Small Box Widget 2-->
         <div class="small-box text-bg-success">
             <div class="inner">
-                <h3>{{$Order}}</h3>
+                <h3>{{ \App\Models\order::allcount() }}</h3>
                 <p>All Orders</p>
+
             </div>
             <svg
                 class="small-box-icon"
@@ -56,7 +57,7 @@
         <!--begin::Small Box Widget 3-->
         <div class="small-box text-bg-warning">
             <div class="inner">
-                <h3>{{ $userCount }}</h3>
+                <h3>{{ \App\Models\User::countUsers() }}</h3>
                 <p>User Registrations</p>
             </div>
             <svg
@@ -111,7 +112,7 @@
 </div>
 <div class="chit-chat-layer1">
     <div class="col-md-12 chit-chat-layer-left">
-        <div class="work-progres">
+        <!-- <div class="work-progres">
             <div class="chit-chat-heading">
                 Recent Followers
             </div>
@@ -179,7 +180,7 @@
                     </tbody>
                 </table>
             </div>
-        </div>
+        </div> -->
     </div>
 
 </div>

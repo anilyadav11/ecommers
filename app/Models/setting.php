@@ -20,6 +20,7 @@ class setting extends Model
         'facebook',
         'twitter',
         'instagram',
-        'linkedin'
+        'linkedin',
+        'banner'
     ];
 }

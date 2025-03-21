@@ -10,6 +10,11 @@ use App\Models\Cart;
 
 class OrderController extends Controller
 {
+    public function index()
+    {
+        $order = Order::all();
+        return view('orders.index', compact('order'));
+    }
 
     public function placeOrder(Request $request)
     {

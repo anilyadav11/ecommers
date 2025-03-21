@@ -7,6 +7,7 @@
                 <!-- First Table -->
                 <div class="col-12 col-xl-6 mb-4 mb-xl-0">
                     <h4 class="text-muted text-center mb-3">All Orders</h4>
+
                     <table class="table bg-light table-hover table-striped  text-center display" id="allorders">
                         <thead>
                             <tr class="text-muted">

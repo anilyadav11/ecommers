@@ -65,4 +65,18 @@ class UserAuthController extends Controller
         Auth::guard('user')->logout();
         return redirect()->route('user.login');
     }
+    public function updateStatus(Request $request, $id)
+    {
+        $user = User::findOrFail($id);
+        $user->status = $request->status;
+        $user->save();
+
+        return back()->with('success', 'User status updated successfully!');
+    }
+
+    public function showProfile(Request $request, $id)
+    {
+        $user = User::find($id);
+        return view('user.user-profile', compact('user'));
+    }
 }

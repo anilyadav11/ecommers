@@ -2,11 +2,20 @@
 @section('content')
 <div class="col-md-12">
     <div class="card mb-4">
-        <div class="card-header">
+        <div class="card-header" style="background-color: #0a6ebd">
             <h3 class="card-title">Category</h3>
             <div class="card-tools">
-                <a class="btn btn-secondry"> Back</a>
+                <a class="btn btn-secondry" style="background-color:rgb(230, 28, 129)" href="{{route('admin.dashboard')}}"> Back</a>
             </div>
+
+        </div>
+        <div class="container-fluid">
+            @if(session('success'))
+            <div class="alert alert-success">
+                {{session('success')}}
+
+            </div>
+            @endif
         </div>
         <!-- /.card-header -->
         <div class="card-body p-0">
@@ -26,7 +35,7 @@
                         <td>{{$category->id}}</td>
                         <td>{{$category->name}}</td>
                         <td>{{$category->slug}}</td>
-                        <td>{{$category->slug}}</td>
+
                         <td>
                             <a href="{{route('admin.category.edit',$category->id)}}" class="btn btn-success">Edit</a>
                             <form action="{{route('admin.category.destroy',$category->id)}}" method="post" style="display:inline-block">

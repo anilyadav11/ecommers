@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('content')
+@php
+$settings=\App\Models\setting::first();
+@endphp
 <!-- ===============>> Banner section start here <<================= -->
 <section class="banner banner--style1">
     <div class="container">
@@ -16,7 +19,7 @@
                 </div>
                 <div class="col-lg-6 col-md-5">
                     <div class="banner__thumb" data-aos="fade-left" data-aos-duration="1000">
-                        <img src="{{asset('assets/images/banner/home1/1.png')}}" alt="banner-thumb" class="dark">
+                        <img src="{{asset('uploads/setting/'.$settings->banner)}}" alt="banner-thumb" class="dark" style="width: 220px;height: 100%">
                     </div>
                 </div>
             </div>
